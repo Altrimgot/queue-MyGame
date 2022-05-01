@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game</title>
+    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="nav-bar-wrapper">
+                <div class="nav-logo-wrapper">
+                    <i class="nav-logo"></i>
+                    <span class="nav-title">My Game</span>
+                </div>
+                <div class="nav-menu-wrapper">
+                    <span class="nav-menu-item">Про нас</span>
+                    <span class="nav-menu-item">Новини</span>
+                    <span class="nav-menu-item">Підтримка</span>
+                    <i class="nav-menu-icon"></i>
+                </div>
+                <div class="menu-button"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-wrapper">
+        <section class="registration-section">
+            <div class="registration-form-wrapper">
+                <div class="form-card flex-column">
+                    <div class="form-wrapper">
+                        <h2 class="form-title">Електронна черга на тестування нових ігор</h2>
+                        <form class="registration-form flex-column" action="submit" id="form">
+                            <label class="form-label" for="name">Імʼя</label>
+                            <input class="form-input" type="text" id="name" name="name" placeholder="Введіть імʼя" required>
+                            <label class="form-label" for="phone" required>Телефон</label>
+                            <input class="form-input" type="tel" id="phone" name="phone" placeholder="+38 (_) __ __ __" required>
+                            <label class="form-label" for="select">Оберіть гру</label>
+                            <select class="form-input form-input-select" name="" id="select" required>
+                                <option value="The Last of Us 2" selected>The Last of Us 2</option>
+                                <option value="Assasin's Creed: Valhalla">Assasin's Creed: Valhalla</option>
+                                <option value="Doom: Eternal">Doom: Eternal</option>
+                                <option value="Cyberpunk 2077">Cyberpunk 2077</option>
+                                <option value="Far Cry 6">Far Cry 6</option>
+                            </select>
+                            <button class="form-submit-button" type="submit" id="button">Зареєструватися</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="registration-form-image-wrapper">
+                    <img class="registration-form-image" id="game-img" src="../project My Game/img/games/The last of us 2.png" alt="game-img">
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <span class="footer-credentials">
+            ©2022 My Game. Всі права захищені.
+        </span>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

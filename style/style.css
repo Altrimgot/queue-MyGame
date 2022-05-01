@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Roboto;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    min-width: 340px;
+}
+
+.page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 80vh;
+    padding-top: 25px;
+}
+
+.header, .page-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.registration-section {
+    width: 100%;
+}
+
+.registration-form-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.registration-form {
+    height: 400px;
+}
+
+.nav-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 75px 0 75px;
+}
+
+.nav-logo-wrapper {
+    position: relative;
+    padding-left: 65px;
+    cursor: pointer;
+}
+
+.nav-title {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 18.5px;
+    line-height: 2em;
+    color: white;
+}
+
+.nav-title::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    border-left: 1px solid white;
+    width: 10px;
+    height: 25px;
+    right: 80px;
+    top: 5px;
+}
+
+.nav-logo {
+    position: absolute;
+    background-image: url('../img/icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 30px;
+    margin-top: 2px;
+    left: 5px;
+}
+
+.nav-menu-item {
+    font-size: 14px;
+    line-height: 100%;
+    padding-left: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu-item:nth-child(3){
+    padding-right: 30px;
+}
+
+.nav-menu-icon {
+    display: inline-block;
+    background-image: url('../img/Icon.svg');
+    background-position: center;
+    width: 16.5px;
+    height: 16.5px;
+}
+
+select, input {
+    font-size: 16.5px;
+    line-height: 21px;
+    padding: 0 10px;
+}
+
+.form-card {
+    max-width: 500px;
+    min-width: 350px;
+    height: 525px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 2px black;
+}
+
+.form-wrapper {
+    min-width: 50%;
+    padding: 35px 25px 35px 25px;
+}
+
+.registration-form-image {
+    max-width: 350px;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0px 2px 4px 0 #121212;
+}
+
+.form-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: left;
+    padding-bottom: 30px;
+    min-width: 370px;
+}
+
+.form-input {
+    width: 260px;
+    height: 45px;
+    border: 1.5px solid black;
+    border-radius: 2.5px;
+}
+
+.form-label {
+    padding: 20px 0 10px 0;
+    font-size: 15px;
+    line-height: 12px;
+}
+
+.form-label:first-of-type {
+    padding-top: 0;
+}
+
+.form-submit-button {
+    background-color: coral;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
+    width: 185px;
+    height: 50px;
+    margin-top: 35px;
+    font-size: 17px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.menu-button, .menu-button::before, .menu-button::after {
+    display: none;
+    height: 3px;
+    width: 23px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -6.5px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 10px;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    position: fixed;
+    padding: 17px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
