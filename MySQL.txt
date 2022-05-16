@@ -1,0 +1,72 @@
+DROP DATABASE IF EXISTS mygame;
+CREATE DATABASE mygame;
+	use mygame;
+
+DROP TABLE IF EXISTS Clients;
+CREATE TABLE Clients
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(400) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    CONSTRAINT pk_clients PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS Tickets;
+CREATE TABLE Tickets
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(400) NOT NULL,
+    client_phone_number VARCHAR(400),
+    status VARCHAR(20) NOT NULL,
+    CONSTRAINT pk_tickets PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS Operators;
+CREATE TABLE Operators
+(
+	id INTEGER AUTO_INCREMENT,
+    name VARCHAR(400),
+    is_Available BOOLEAN,
+    CONSTRAINT pk_operators PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS Operators_Reports;
+CREATE TABLE Operators_Reports
+(
+	ticket_id INTEGER NOT NULL,
+    operator_id INTEGER NULL,
+    is_Active_Ticket BOOLEAN NOT NULL DEFAULT FALSE,
+    comment VARCHAR(2000) NULL 
+);
+
+ALTER TABLE Operators_Reports ADD CONSTRAINT pk_operators_reports_id PRIMARY KEY (ticket_id, operator_id);
+ALTER TABLE Operators_Reports ADD CONSTRAINT fk_ticket_id FOREIGN KEY (ticket_id) REFERENCES Tickets(ticket_id);
+ALTER TABLE Operators_Reports ADD CONSTRAINT fk_operator_id FOREIGN KEY (operator_id) REFERENCES Operators(operator_id);
+
+INSERT INTO Clients (name, phone_number) 
+VALUES ("Дмитро", "+380632721142"),
+	("Ганна", "+380972223701"),
+	("Євгеній", "+380991117833");
+    
+INSERT INTO Tickets (name, client_phone_number, status)
+VALUES ("Doom: Eternal", "++380632721142", 'Вирішен'),
+		("Far Cry 6", "+380972223701", 'В процесі'),
+		("The Last of Us 2", "+380991117833", 'Очікування');
+        
+INSERT INTO Operators (name, is_Available)
+VALUES ("Олексій", true),
+		("Іван", true),
+        ("Тетяна", false),
+        ("Олена", false);
+        
+INSERT INTO Operators_Reports (ticket_id, operator_id, is_Active_Ticket, comment)
+VALUES (1, 1, false, 'Гра була успішно отримана клієнтом для подальшого тестування'),
+		(2, 4, true, 'Очікуємо отримання дозвіл на тестування клієнтом'),
+		(3, 3, true, NULL);
+
+SELECT name, status FROM Tickets
+	ORDER BY id DESC;
+
+SELECT name, CASE is_Available WHEN false THEN "Not available" WHEN true THEN "Available" END AS Availability FROM Operators O;
+
+SELECT C.name, C.phone_number FROM Clients C WHERE C.phone_number = '+380972223701';
